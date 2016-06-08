@@ -1,5 +1,5 @@
 - hosts: vagrants
-  sudo: true
+  become: no
   user: vagrant
   roles:
     - packages
