@@ -1,7 +1,22 @@
 apt_packages:
+  - { name: autoconf }
+  - { name: bison }
   - { name: build-essential }
   - { name: eclipse-cdt }
+  - { name: flex }
+  - { name: gcc-arm-embedded }
   - { name: gccgo-go }
   - { name: gdb }
   - { name: git }
+  - { name: libftdi-dev }
+  - { name: libgmp3-dev }
+  - { name: libmpc-dev }
+  - { name: libmpfr-dev }
+  - { name: libncurses5-dev }
+  - { name: libtool }
+  - { name: libusb-1.0-0-dev }
+  - { name: texinfo }
   - { name: tig }
+  - { name: zlib1g }
+  - { name: zlib1g-dev }
+  - { name: python-yaml }

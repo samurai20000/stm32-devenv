@@ -1,3 +1,7 @@
+- name: add apt repository
+  apt_repository: repo='ppa:team-gcc-arm-embedded/ppa'
+  become: yes
+
 - name: apt-get install packages
   apt: name="{{ item.name }}" update_cache=yes
   with_items: "{{ apt_packages }}"
