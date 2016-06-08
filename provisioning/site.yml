@@ -1,0 +1,5 @@
+- hosts: vagrants
+  sudo: true
+  user: vagrant
+  roles:
+    - package
