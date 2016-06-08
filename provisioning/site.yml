@@ -2,4 +2,4 @@
   sudo: true
   user: vagrant
   roles:
-    - package
+    - packages

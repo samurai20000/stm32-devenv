@@ -1,0 +1,7 @@
+apt_packages:
+  - { name: build-essential }
+  - { name: eclipse-cdt }
+  - { name: gccgo-go }
+  - { name: gdb }
+  - { name: git }
+  - { name: tig }

@@ -1,0 +1,3 @@
+- name: apt-get install packages
+  apt: name="{{ item.name }}" update_cache=yes
+  with_items: "{{ apt_packages }}"
