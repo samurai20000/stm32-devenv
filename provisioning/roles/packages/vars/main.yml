@@ -16,9 +16,12 @@ apt_packages:
   - { name: libncurses5-dev }
   - { name: libtool }
   - { name: libusb-1.0-0-dev }
+  - { name: pkg-config }
   - { name: python-yaml }
   - { name: texinfo }
   - { name: tig }
+  - { name: tmux }
   - { name: vim }
   - { name: zlib1g }
   - { name: zlib1g-dev }
+  - { name: zsh }
