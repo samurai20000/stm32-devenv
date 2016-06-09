@@ -3,6 +3,7 @@ apt_packages:
   - { name: bison }
   - { name: build-essential }
   - { name: eclipse-cdt }
+  - { name: emacs }
   - { name: flex }
   - { name: gcc-arm-embedded }
   - { name: gccgo-go }
@@ -15,8 +16,9 @@ apt_packages:
   - { name: libncurses5-dev }
   - { name: libtool }
   - { name: libusb-1.0-0-dev }
+  - { name: python-yaml }
   - { name: texinfo }
   - { name: tig }
+  - { name: vim }
   - { name: zlib1g }
   - { name: zlib1g-dev }
-  - { name: python-yaml }
