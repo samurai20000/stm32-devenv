@@ -6,6 +6,7 @@
     - openocd
     - atom
     - emacs
+    - eclipse
     - oh-my-zsh
     - tmux
     - peco
