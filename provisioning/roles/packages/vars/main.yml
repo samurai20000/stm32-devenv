@@ -4,6 +4,7 @@ apt_packages:
   - { name: bison }
   - { name: build-essential }
   - { name: eclipse-cdt }
+  - { name: curl }
   - { name: emacs }
   - { name: flex }
   - { name: gcc-arm-embedded }
