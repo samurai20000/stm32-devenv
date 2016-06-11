@@ -1,0 +1,15 @@
+- name: git clone latest openocd
+  git: repo=git://openocd.git.sourceforge.net/gitroot/openocd/openocd dest=/home/vagrant/tmp/openocd
+
+- name: openocd bootstrap
+  command: ./bootstrap chdir=/home/vagrant/tmp/openocd
+
+- name: openocd configure
+  command: ./configure --enable-maintainer-mode --disable-option-checking --disable-werror --prefix=${PREFIX} --enable-dummy --enable-usb_blaster_libftdi --enable-ep93xx --enable-at91rm9200 --enable-presto_libftdi --enable-usbprog --enable-jlink --enable-vsllink --enable-rlink --enable-stlink --enable-arm-jtag-ew chdir=/home/vagrant/tmp/openocd
+
+- name: openocd make
+  command: make chdir=/home/vagrant/tmp/openocd
+
+- name: openocd Install
+  command: make install chdir=/home/vagrant/tmp/openocd
+  become: yes

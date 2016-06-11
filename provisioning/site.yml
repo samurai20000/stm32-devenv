@@ -3,6 +3,7 @@
   user: vagrant
   roles:
     - packages
+    - openocd
     - atom
     - emacs
     - oh-my-zsh
