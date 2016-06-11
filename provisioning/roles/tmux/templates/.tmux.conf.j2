@@ -1,0 +1,37 @@
+# prefix
+set-option -g prefix C-t
+
+# zsh
+set -g default-shell /usr/bin/zsh
+
+# encoding
+set-window-option -g utf8 on
+set-option -g status-utf8 on
+
+# base index
+set-option -g base-index 1
+set-option -g pane-base-index 1
+
+# key bindings
+bind k kill-window
+bind-key C-t last-window
+bind C-r source-file ~/.tmux.conf
+bind -n S-left select-pane -L
+bind -n S-down select-pane -D
+bind -n S-up select-pane -U
+bind -n S-right select-pane -R
+bind 1 break-pane
+bind 2 split-window -v
+bind 3 split-window -h
+
+# status
+set-option -g status-interval 5
+set-option -g status-bg colour0
+set-option -g status-fg white
+set-window-option -g window-status-current-fg white
+set-window-option -g window-status-current-bg "#ff1493"
+set-option -g message-fg white
+set-option -g message-bg red
+
+# color
+set-option -g default-terminal "screen-256color"
