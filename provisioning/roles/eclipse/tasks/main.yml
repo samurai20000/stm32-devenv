@@ -1,0 +1,44 @@
+- name: add apt repository for Java8
+  apt_repository: repo='ppa:webupd8team/java'
+  become: yes
+
+- name: autoaccept license for Java8
+  debconf: name='oracle-java8-installer' question='shared/accepted-oracle-license-v1-1' value='true' vtype='select'
+  become: yes
+
+- name: install Java
+  apt: name={{item}} state=latest
+  with_items:
+    - oracle-java8-installer
+    - ca-certificates
+    - oracle-java8-set-default
+  become: yes
+
+- name: check eclipse path
+  stat: path=/opt/eclipse/eclipse/eclipse
+  register: installed_eclipse
+
+- name: get eclipse packages
+  get_url: url=http://ftp.jaist.ac.jp/pub/eclipse/eclipse/downloads/drops4/R-4.5.2-201602121500/eclipse-platform-4.5.2-linux-gtk-x86_64.tar.gz dest=/home/vagrant/tmp/eclipse-platform-4.5.2-linux-gtk-x86_64.tar.gz
+  when: (not installed_eclipse.stat.exists)
+
+- file: path=/opt/eclipse state=directory
+  become: yes
+
+- name: unarchive the latest eclipse
+  unarchive: src=/home/vagrant/tmp/eclipse-platform-4.5.2-linux-gtk-x86_64.tar.gz dest=/home/vagrant/tmp copy=no
+  when: (not installed_eclipse.stat.exists)
+
+- name: move eclipse to /opt/
+  command: mv /home/vagrant/tmp/eclipse /opt/eclipse/4.5.2
+  when: (not installed_eclipse.stat.exists)
+  become: yes
+
+- name: set alternatives for eclipse
+  alternatives: name=eclipse link=/opt/eclipse/eclipse path=/opt/eclipse/4.5.2
+  when: (not installed_eclipse.stat.exists)
+  become: yes
+
+- name: set owner and group for /opt/eclipse
+  file: path=/opt/eclipse state=directory owner=vagrant group=vagrant recurse=true
+  become: yes
