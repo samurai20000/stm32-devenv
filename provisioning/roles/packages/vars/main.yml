@@ -1,4 +1,5 @@
 apt_packages:
+  - { name: atom }
   - { name: autoconf }
   - { name: bison }
   - { name: build-essential }

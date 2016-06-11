@@ -1,5 +1,9 @@
-- name: add apt repository
+- name: add apt repository for gcc-arm
   apt_repository: repo='ppa:team-gcc-arm-embedded/ppa'
+  become: yes
+
+- name: add apt repository for atom
+  apt_repository: repo='ppa:webupd8team/atom'
   become: yes
 
 - name: apt-get install packages
